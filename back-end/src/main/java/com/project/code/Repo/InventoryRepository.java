@@ -5,6 +5,7 @@ import com.project.code.Model.Inventory;
 import jakarta.transaction.Transactional;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Modifying;
+import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -25,6 +26,7 @@ public interface InventoryRepository extends JpaRepository<Inventory, Long> {
     //      - Parameters: Long productId, Long storeId
       
     // Example: public Inventory findByProductIdandStoreId(Long productId, Long storeId);
+    @Query("SELECT i FROM Inventory i WHERE i.product.id = :productId AND i.store.id = :storeId")
     public Optional<Inventory> findByProduct_IdAndStore_Id(Long productId, Long storeId);
 
     //    - **findByStore_Id**:
