@@ -1,13 +1,22 @@
 package com.project.code.Model;
 
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class Store {
 
-// 1. Add 'id' field:
-//    - Type: private long 
-//    - This field will be auto-incremented.
-//    - Use @Id to mark it as the primary key.
-//    - Use @GeneratedValue(strategy = GenerationType.IDENTITY) to auto-increment it.
+    // 1. Add 'id' field:
+    //    - Type: private long
+    //    - This field will be auto-incremented.
+    //    - Use @Id to mark it as the primary key.
+    //    - Use @GeneratedValue(strategy = GenerationType.IDENTITY) to auto-increment it.
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private long id;
 
 // 2. Add 'name' field:
 //    - Type: private String

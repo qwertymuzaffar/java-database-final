@@ -1,5 +1,11 @@
 package com.project.code.Model;
 
+import jakarta.persistence.Entity;
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
+
+@Entity
 public class OrderItem {
 
 // 1. Add 'id' field:
@@ -7,6 +13,10 @@ public class OrderItem {
 //    - This field will be auto-incremented.
 //    - Use @Id to mark it as the primary key.
 //    - Use @GeneratedValue(strategy = GenerationType.IDENTITY) to auto-increment it.
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Long id;
 
 // 2. Add 'order' field:
 //    - Type: private OrderDetails
