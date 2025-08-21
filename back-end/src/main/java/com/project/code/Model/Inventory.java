@@ -64,12 +64,44 @@ public class Inventory {
     // 8. Add @Entity annotation:
     //    - Use @Entity above the class definition to mark it as a JPA entity that will be mapped to a database table.
 
-// 9. Add Getters and Setters:
-//    - Add getters and setters for 'id', 'product', 'store', and 'stockLevel' fields.
-//    - Example: public Long getId(), public void setId(Long id)
-//    - Example: public Product getProduct(), public void setProduct(Product product)
-//    - Example: public Store getStore(), public void setStore(Store store)
-//    - Example: public Integer getStockLevel(), public void setStockLevel(Integer stockLevel)
+    // 9. Add Getters and Setters:
+    //    - Add getters and setters for 'id', 'product', 'store', and 'stockLevel' fields.
+    //    - Example: public Long getId(), public void setId(Long id)
+    //    - Example: public Product getProduct(), public void setProduct(Product product)
+    //    - Example: public Store getStore(), public void setStore(Store store)
+    //    - Example: public Integer getStockLevel(), public void setStockLevel(Integer stockLevel)
 
+
+    public Long getId() {
+        return id;
+    }
+
+    public Product getProduct() {
+        return product;
+    }
+
+    public Store getStore() {
+        return store;
+    }
+
+    public Integer getStockLevel() {
+        return stockLevel;
+    }
+
+    public void setId(Long id) {
+        this.id = id;
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
+    }
+
+    public void setStore(Store store) {
+        this.store = store;
+    }
+
+    public void setStockLevel(Integer stockLevel) {
+        this.stockLevel = stockLevel;
+    }
 }
 
