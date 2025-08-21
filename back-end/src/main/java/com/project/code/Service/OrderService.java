@@ -76,9 +76,7 @@ public class OrderService {
             Product product = productRepository.findById(productId)
                     .orElseThrow(() -> new IllegalArgumentException("Product not found: " + productId));
 
-            Inventory inventory = inventoryRepository.findByProduct_IdAndStore_Id(productId, store.getId())
-                    .orElseThrow(() -> new IllegalStateException(
-                            "Inventory not found for productId=" + productId + ", storeId=" + store.getId()));
+            Inventory inventory = inventoryRepository.findByProduct_IdAndStore_Id(productId, store.getId());
 
             Integer available = inventory.getStockLevel();
             if (available == null || available < qty) {
