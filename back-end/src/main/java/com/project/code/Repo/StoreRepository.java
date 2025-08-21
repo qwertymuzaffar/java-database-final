@@ -21,7 +21,7 @@ public interface StoreRepository extends JpaRepository<Store, Long> {
     //      - Parameter: Long id
 
     // Example: public Store findById(Long id);
-    public Optional<Store> findById(Long id);
+    public Store findByid(Long id);
 
     //    - **findBySubName**:
     //      - This method will retrieve stores whose name contains a given substring.
