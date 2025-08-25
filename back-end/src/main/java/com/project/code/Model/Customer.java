@@ -52,7 +52,7 @@ public class Customer {
 
     @OneToMany(mappedBy = "customer", fetch = FetchType.EAGER)
     @JsonManagedReference
-    private List<OrderItem> orderItem;
+    private List<OrderDetails> orders;
 
     // 6. Getters and Setters:
     //    - For each field ('id', 'name', 'email', 'phone'), add getter and setter methods.
@@ -80,9 +80,7 @@ public class Customer {
         return phone;
     }
 
-    public List<OrderItem> getOrderItem() {
-        return orderItem;
-    }
+
 
     public void setId(long id) {
         this.id = id;
@@ -100,8 +98,11 @@ public class Customer {
         this.phone = phone;
     }
 
-    public void setOrderItem(List<OrderItem> orderItem) {
-        this.orderItem = orderItem;
+    public List<OrderDetails> getOrders() {
+        return orders;
+    }
+    public void setOrders(List<OrderDetails> orders) {
+        this.orders = orders;
     }
 }
 

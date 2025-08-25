@@ -34,7 +34,8 @@ public class StoreController {
     //    - Annotate with `@PostMapping` to create an endpoint for adding a new store.
     //    - Accept `Store` object in the request body.
     //    - Return a success message in a `Map<String, String>` with the key `message` containing store creation confirmation.
-    public Map<String, String> addStore(@PathVariable Store store) {
+    @PostMapping
+    public Map<String, String> addStore(@RequestBody Store store) {
         Map<String, String> map = new HashMap<>();
 
         Store result = storeRepository.save(store);

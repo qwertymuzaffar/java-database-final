@@ -52,7 +52,7 @@ public class Product {
     //    - Use @OneToMany(mappedBy = "product") to reflect the one-to-many relationship with Inventory.
     //    - Use @JsonManagedReference("inventory-product") to manage bidirectional relationships and avoid circular references.
 
-    @OneToMany(mappedBy = "product")
+    @OneToMany(mappedBy = "product", fetch = FetchType.EAGER)
     @JsonManagedReference("inventory-product")
     private List<Inventory> inventory;
 

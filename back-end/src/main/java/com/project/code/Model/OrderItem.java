@@ -24,7 +24,7 @@ public class OrderItem {
     @ManyToOne
     @JoinColumn(name = "order_id")
     @JsonManagedReference
-    private OrderDetails orderDetails;
+    private OrderDetails order;
 
     // 3. Add 'product' field:
     //    - Type: private Product
@@ -53,8 +53,8 @@ public class OrderItem {
     public OrderItem() {
     }
 
-    public OrderItem(OrderDetails orderDetails, Product product, Integer quantity, Double price) {
-        this.orderDetails = orderDetails;
+    public OrderItem(OrderDetails order, Product product, Integer quantity, Double price) {
+        this.order = order;
         this.product = product;
         this.quantity = quantity;
         this.price = price;
@@ -71,10 +71,6 @@ public class OrderItem {
         return id;
     }
 
-    public OrderDetails getOrderDetails() {
-        return orderDetails;
-    }
-
     public Product getProduct() {
         return product;
     }
@@ -83,16 +79,19 @@ public class OrderItem {
         return quantity;
     }
 
+    public OrderDetails getOrder() {
+        return order;
+    }
+    public void setOrder(OrderDetails order) {
+        this.order = order;
+    }
+
     public Double getPrice() {
         return price;
     }
 
     public void setId(Long id) {
         this.id = id;
-    }
-
-    public void setOrderDetails(OrderDetails orderDetails) {
-        this.orderDetails = orderDetails;
     }
 
     public void setProduct(Product product) {

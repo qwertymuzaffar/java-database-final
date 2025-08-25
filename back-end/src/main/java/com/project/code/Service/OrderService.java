@@ -90,7 +90,7 @@ public class OrderService {
             // Create OrderItem for each product and associate it with the OrderDetails.
             // Hint: Use orderItemRepository.save() to save each order item.
             OrderItem orderItem = new OrderItem();
-            orderItem.setOrderDetails(orderDetails);
+            orderItem.setOrder(orderDetails);
             orderItem.setProduct(product);
             orderItem.setQuantity(qty);
 

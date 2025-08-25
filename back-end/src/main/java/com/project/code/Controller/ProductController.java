@@ -42,7 +42,7 @@ public class ProductController {
     //    - Save the valid product using `save()` method of `ProductRepository`.
     //    - Catch exceptions (e.g., `DataIntegrityViolationException`) and return appropriate error message.
     @PostMapping
-    public Map<String, String> addProduct(@PathVariable Product product) {
+    public Map<String, String> addProduct(@RequestBody Product product) {
         Map<String, String> map = new HashMap<>();
 
         try {
