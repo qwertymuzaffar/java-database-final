@@ -8,6 +8,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 
 @Service
 public class OrderService {
@@ -59,7 +60,7 @@ public class OrderService {
         orderDetails.setCustomer(customer);
         orderDetails.setStore(store);
         orderDetails.setTotalPrice(placeOrderRequest.getTotalPrice());
-        orderDetails.setDate(LocalDate.now());
+        orderDetails.setDate(LocalDateTime.now());
 
         orderDetailsRepository.save(orderDetails);
 
